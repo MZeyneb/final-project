@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Fredericka+the+Great&family=Ribeye&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+.login{
+    height: 100vh;
+    .block{
+        padding: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        background-color: #92b9ca;
+        height: 100vh;
+        .left{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 650px;
+            overflow: hidden;
+            .image{
+                width: 100%;
+                position: relative;
+                img{
+                    width: 100%;
+                }
+            }
+            h1{
+               
+                font-size: 55px;
+                color: #fdfdf5;
+                font-weight: 700;
+                font-family: "Averia Sans Libre", serif;
+            }
+            h3{
+               
+                font-size: 20px; 
+                color: #417491;
+                margin-bottom: 20px;
+
+            }
+        }
+        .right{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #fcfcfe;
+            height: 650px;
+            border-radius: 30px;
+            gap: 30px;
+            h1{
+                font-size: 50px;
+                color: #417491;
+            }
+            hr{
+                width: 10%;
+                margin-bottom: 20px;
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                width: 65%;
+                input{
+                    border: none;
+                    padding: 7px 15px;
+                    border-radius: 15px;
+                    outline: none;
+                    font-size: 17px;
+                    background-color: #92b9ca;
+                    color: white;
+                    font-weight: 500;
+                    &::placeholder{
+                        color: white;
+                    font-weight: 400;
+
+                    }
+                    
+                }
+                button{
+                    border: none;
+                    padding: 7px;
+                    border-radius: 15px;
+                    font-size: 17px;
+                    background-color: #ffc36b;
+                    color: white;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    &:hover{
+                        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                        background-color: #fdfdf5;
+                        color: #ffc36b;
+                    }
+                }
+
+                p{
+                    font-size: 17px;
+                    text-align: center;
+                    a{
+                        color: #ffc36b;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+.error-text {
+    color: rgb(233, 68, 68);
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .login {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .block {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .left, .right {
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  .gsiMaterialButton {
+    user-select: none;
+    appearance: none;
+    background-color: #fcfcfe;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #1f1f1f;
+    cursor: pointer;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 17px;
+    height: 40px;
+    letter-spacing: 0.25px;
+    outline: none;
+    overflow: hidden;
+    padding: 7px 15px;
+    position: relative;
+    text-align: center;
+    transition: background-color 0.218s, border-color 0.218s, box-shadow 0.218s;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 65%;
+    max-width: 400px;
+    min-width: min-content;
+  
+    &:not(:disabled):hover {
+      box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    }
+  
+    &:not(:disabled):hover .gsiMaterialButtonState {
+      background-color: #303030;
+      opacity: 8%;
+    }
+  
+    &:not(:disabled):active .gsiMaterialButtonState,
+    &:not(:disabled):focus .gsiMaterialButtonState {
+      background-color: #303030;
+      opacity: 12%;
+    }
+  
+    &:disabled {
+      cursor: default;
+      background-color: #ffffff61;
+      border-color: #1f1f1f1f;
+  
+      .gsiMaterialButtonContents,
+      .gsiMaterialButtonIcon {
+        opacity: 38%;
+      }
+    }
+  
+    .gsiMaterialButtonContentWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center; // Yazı və logo ortada
+      flex-direction: row;
+      flex-wrap: nowrap;
+      height: 100%;
+      position: relative;
+      width: 100%;
+    }
+  
+    .gsiMaterialButtonIcon {
+      height: 20px;
+      margin-right: 8px; // Logonun yazıdan məsafəsi
+      min-width: 20px;
+      width: 20px;
+    }
+  
+    .gsiMaterialButtonContents {
+      flex: none; // Yazının genişlənməsinin qarşısını al
+      font-family: "Roboto", Arial, sans-serif;
+      font-weight: 500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: top;
+    }
+  
+    .gsiMaterialButtonState {
+      transition: opacity 0.218s;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }

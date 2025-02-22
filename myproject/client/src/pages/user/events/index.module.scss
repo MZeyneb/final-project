@@ -1,0 +1,169 @@
+.box{
+    padding-top: 200px;
+
+
+    .calendarContainer {
+        font-family: "Arial", sans-serif;
+        max-width: 800px; // Daha kiçik ölçülər
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      .title {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 1.5rem; // Daha kiçik başlıq
+      }
+      
+      .monthHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        h2 {
+          margin: 0;
+          font-size: 1.2rem;
+          color: #555;
+        }
+      }
+      
+      .navButton {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #555;
+        &:hover {
+          color: #333;
+        }
+      }
+      
+      .calendarGrid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px; // Daha kiçik boşluq
+      }
+      
+      .calendarDay {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 5px; // Daha kiçik padding
+        min-height: 60px; // Daha kiçik hündürlük
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .dayHeader {
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #555;
+        font-size: 0.9rem; // Daha kiçik yazı
+      }
+      
+      .event {
+        width: 100%;
+        padding: 3px;
+        margin: 1px 0;
+        border-radius: 3px;
+        color: #fff;
+        font-size: 0.8rem; // Daha kiçik yazı
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .deleteButton {
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+      
+      .addEventButton {
+        display: block;
+        margin: 20px auto;
+        padding: 8px 16px; // Daha kiçik düymə
+        background-color: #a3d8f4;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9rem; // Daha kiçik yazı
+        transition: background-color 0.3s ease;
+      
+        &:hover {
+          background-color: #87c1e0;
+        }
+      }
+      
+      .modalOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .modal {
+        background-color: #fff;
+        padding: 15px; // Daha kiçik padding
+        border-radius: 10px;
+        width: 250px; // Daha kiçik modal
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      
+      .input {
+        width: 100%;
+        padding: 8px; // Daha kiçik padding
+        margin: 8px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 0.9rem; // Daha kiçik yazı
+      }
+      
+      .modalButtons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+      }
+      
+      .saveButton {
+        background-color: #a3d8f4;
+        color: #fff;
+        border: none;
+        padding: 8px 16px; // Daha kiçik düymə
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      
+        &:hover {
+          background-color: #87c1e0;
+        }
+      }
+      
+      .cancelButton {
+        background-color: #ddd;
+        color: #333;
+        border: none;
+        padding: 8px 16px; // Daha kiçik düymə
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      
+        &:hover {
+          background-color: #ccc;
+        }
+      }
+
+}

@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+.home{
+  padding-top: 60px;
+  .hero{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5e90bb;
+
+    .box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      position: relative;
+      .block{
+        z-index: 1;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        
+          background: rgba(255, 255, 255, 0.1); // Şəffaf ağ fon
+          backdrop-filter: blur(10px); // Blur effekti
+          -webkit-backdrop-filter: blur(10px); // Safari üçün
+          border-radius: 15px; // Yumşaq kənarlar
+          border: 1px solid rgba(255, 255, 255, 0.2); // Yüngül ağ kontur
+          padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .text{
+          h1{
+            font-size: 75px;
+            color: #fdf8ea;
+            font-weight: 700;
+            font-family: "Quicksand", serif;;
+            // text-align: center;
+          }
+          p{
+            font-size: 20px;
+            color: #E0E0E0;
+            font-family: "Quicksand", serif;;
+
+          }
+        }
+        .image{
+          img{
+            border-radius: 15px;
+            width: 100%;
+          }
+        }
+        
+      }
+
+    }
+  }
+
+  .features{
+    background-color: #fcfcfe;
+    padding: 30px 0;
+    h2{
+      text-align: center;
+      font-size: 35px;
+      margin-top: 30px;
+      color: black;
+      font-weight: 600;
+    }
+    .box{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 0;
+      gap: 40px;
+      .card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 15px;
+        padding: 30px 15px;
+        transition: 0.3s;
+        &:hover{
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+
+        }
+        h3{
+          font-size: 30px;
+          font-weight: 500;
+        }
+        h4{
+          font-size: 20px;
+          font-weight: 300;
+          text-align: center;
+        }
+        .calendar{
+          font-size: 40px;
+          color: #5e90bb;
+        }
+        .book{
+          font-size: 40px;
+          color: #5e90bb;
+        }
+        .forum{
+          font-size: 40px;
+          color: #5e90bb;
+        }
+      }
+    }
+  }
+
+  .planner{
+    padding: 70px 0;
+    .box{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 70px;
+      background-color: #F8F9FA;
+      border-radius: 15px;
+      transition: 0.3s;
+      margin-top: 30px;
+      &:hover{
+
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+      }
+      .avat{
+        width: 90%;
+        .image{
+          img{
+            width: 100%;
+          }
+          
+        }
+      }
+      .text{
+        h2{
+          font-size: 35px;
+          margin-bottom: 20px;
+        }
+        h4{
+          line-height: 2rem;
+          font-size: 20px;
+          font-weight: 500;
+        }
+      }
+
+    }
+
+    .box2{
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 70px;
+      background-color: #5e90bb;
+      border-radius: 15px;
+      transition: 0.3s;
+      margin-top: 30px;
+      &:hover{
+
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+      }
+      .avat{
+        width: 90%;
+        .image{
+          img{
+            width: 100%;
+          }
+          
+        }
+      }
+      .text{
+        h2{
+          font-size: 35px;
+          margin-bottom: 20px;
+          color: white;
+        }
+        h4{
+          line-height: 2rem;
+          font-size: 20px;
+          font-weight: 500;
+          color: white;
+        }
+      }
+
+    }
+
+    .box3{
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 70px;
+      background-color: #F8F9FA;
+      border-radius: 15px;
+      transition: 0.3s;
+      margin-top: 30px;
+      &:hover{
+
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+      }
+      .avat{
+        width: 90%;
+        .image{
+          img{
+            width: 100%;
+          }
+          
+        }
+      }
+      .text{
+        h2{
+          font-size: 35px;
+          margin-bottom: 20px;
+          color: black;
+        }
+        h4{
+          line-height: 2rem;
+          font-size: 20px;
+          font-weight: 500;
+          color: black;
+        }
+      }
+
+    }
+
+  }
+
+  .questions{
+    padding: 70px 0;
+    background-color: #fcfcfe;
+    .box{
+      display: flex;
+      justify-content: center;
+      // gap: 40px;
+      align-items: center;
+      .avat{
+        width: 50%;
+        display: flex;
+        // justify-content: center;
+        .image{
+          width: 100%;
+          img{
+            width: 100%;
+          }
+        }
+      }
+
+      .feedback{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 50%;
+        flex-direction: column;
+        gap: 10px;
+        h2{
+          font-size: 35px;
+        }
+        p{
+          font-size: 20px;
+          text-align: center;
+          margin-bottom: 30px;
+        }
+        .send{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 70px 100px;
+          background-color: transparent;
+          // border: 1px solid black;
+          border-radius: 15px;
+          input{
+            border: none;
+            outline: none;
+            padding: 3px 15px;
+            font-size: 21px;
+            border-bottom: 1px solid gray;
+            background-color: transparent;
+          }
+          button{
+            font-size: 17px;
+            padding: 6px 15px;
+            border-radius: 2px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            border: 1px solid gray;
+            cursor: pointer;
+            transition: 0.3s;
+            &:hover{
+              background-color: black;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    
+  }
+
+}
