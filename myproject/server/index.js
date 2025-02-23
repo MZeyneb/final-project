@@ -9,10 +9,11 @@ const authRouter = require('./router/authRoute');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
-const path = require('path'); // Import the path module  <---- Add this line
+const path = require('path');
 const messageRoute = require('./router/messageRoute');
-const eventRouter = require('./router/eventRoute')
-const bookRoutes = require('./router/bookRoute')
+const eventRouter = require('./router/eventRoute');
+const bookRoutes = require('./router/bookRoute');
+const forumRoute = require('./router/forumRoute'); 
 
 dotenv.config();
 
@@ -43,10 +44,8 @@ app.use('/blogs', router);
 app.use('/users', userRouter);
 app.use('/auth', authRouter);
 app.use('/messages', messageRoute);
-// app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Now path is defined
-// app.use("/events", eventRouter);
 app.use('/books', bookRoutes);
-
+app.use('/forum', forumRoute);
 
 app.use((err, req, res, next) => {
   console.error(err.stack);

@@ -52,3 +52,35 @@
     font-size: 16px;
   }
   
+
+  .dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  
+    h2 {
+      color: #ffffff;
+    }
+  
+    .search-input {
+      background-color: #333333;
+      color: #ffffff;
+      border-color: #555;
+    }
+  
+    .search-button {
+      background-color: #4CAF50;
+      color: #ffffff;
+  
+      &:hover {
+        background-color: #45a049;
+      }
+    }
+  
+    .user-item {
+      border-color: #555;
+  
+      .user-info {
+        color: #ffffff;
+      }
+    }
+  }

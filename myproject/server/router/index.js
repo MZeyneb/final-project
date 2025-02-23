@@ -6,7 +6,7 @@ const {
     postBlog
 } = require('../controllers/index')
 const authMiddleware = require('../middlewares/authMiddleware')
-console.log(typeof authMiddleware); // "function" olmalıdır
+console.log(typeof authMiddleware); 
 console.log(authMiddleware(["user", "admin"])); 
 const router = express.Router()
 

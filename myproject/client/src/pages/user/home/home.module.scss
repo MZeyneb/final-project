@@ -307,3 +307,76 @@
   }
 
 }
+
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+
+  .hero {
+    background-color: #1a1a1a;
+
+    .text h1, .text p {
+      color: #ffffff;
+    }
+  }
+
+  .features {
+    background-color: #1a1a1a;
+
+    h2 {
+      color: #ffffff;
+    }
+
+    .card {
+      background-color: #333333;
+      color: #ffffff;
+
+      &:hover {
+        box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
+      }
+    }
+  }
+
+  .planner {
+    .box, .box3 {
+      background-color: #333333;
+      color: #ffffff;
+
+      .text h2, .text h4 {
+        color: #ffffff;
+      }
+    }
+
+    .box2 {
+      background-color: #1a1a1a;
+      color: #ffffff;
+
+      .text h2, .text h4 {
+        color: #ffffff;
+      }
+    }
+  }
+
+  .questions {
+    background-color: #1a1a1a;
+
+    .feedback h2, .feedback p {
+      color: #ffffff;
+    }
+
+    .send input {
+      color: #ffffff;
+      border-bottom: 1px solid #ffffff;
+    }
+
+    .send button {
+      color: #ffffff;
+      border: 1px solid #ffffff;
+
+      &:hover {
+        background-color: #ffffff;
+        color: #1a1a1a;
+      }
+    }
+  }
+}

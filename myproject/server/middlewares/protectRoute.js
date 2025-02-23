@@ -9,7 +9,6 @@ const protectRoute = async (req, res, next) => {
             return res.status(401).json({ error: "No token" });
         }
 
-        // Bearer token formatını ayır
         if (token.startsWith("Bearer ")) {
             token = token.slice(7);
         }
@@ -26,7 +25,7 @@ const protectRoute = async (req, res, next) => {
             return res.status(404).json({ error: "User not found" });
         }
 
-        req.user = user; // İstifadəçi məlumatlarını req obyektinə əlavə et
+        req.user = user; 
         next();
     } catch (error) {
         res.status(500).json({ message: error.message });

@@ -12,9 +12,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 
-
-
-const Home = () => {
+const Home = ({ darkMode }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
@@ -43,7 +41,7 @@ const Home = () => {
 
   return (
     <>
-    <div className={styles["home"]}>
+      <div className={`${styles["home"]} ${darkMode ? styles["dark-mode"] : ""}`}>
     <section className={styles["hero"]}>
       <div className="container">
     <div className={styles["box"]}>
@@ -101,14 +99,14 @@ const Home = () => {
         </div>
         <div className={styles["text"]}>
         <h2>Planlayıcı</h2>
-        <h4>Universitet həyatı təkcə dərslərlə məhdudlaşmır. Bəzən bir sualın cavabını tapmaq üçün saatlarla axtarış edirik, bəzən isə təcrübəli birinin tövsiyəsinə ehtiyac duyuruq. Forum bölməsi məhz bu məqsədlə yaradılıb – tələbələrin bir-birinə dəstək olduğu, suallarına cavab tapdığı və faydalı müzakirələr apardığı bir icma!</h4>
+        <h4>Tələbə həyatı çoxlu dərslər, imtahanlar və tapşırıqlarla doludur. Planlı olmaq uğurun açarıdır! İmtahan Planlayıcısı ilə bütün imtahan tarixlərini bir yerdə izləyə, vaxtını daha yaxşı idarə edə və stressi azalda bilərsən.</h4>
         </div>
 
       </div>
       <div className={styles["box2"]}>
         <div className={styles["text"]}>
-        <h2>Forum</h2>
-        <h4>Universitet həyatı təkcə dərslərlə məhdudlaşmır. Bəzən bir sualın cavabını tapmaq üçün saatlarla axtarış edirik, bəzən isə təcrübəli birinin tövsiyəsinə ehtiyac duyuruq. Forum bölməsi məhz bu məqsədlə yaradılıb – tələbələrin bir-birinə dəstək olduğu, suallarına cavab tapdığı və faydalı müzakirələr apardığı bir icma!</h4>
+        <h2>Kitablar</h2>
+        <h4>Düzgün kitab seçimləri həm akademik uğurun, həm də şəxsi inkişafın açarıdır! Kitablar bölməsi sənə oxumaq üçün ilham verəcək, faydalı tövsiyələr təqdim edəcək və tələbələr arasında kitab mübadiləsini təşviq edəcək bir məkandır.</h4>
         </div>
         <div className={styles["avat"]}>
           <div className={styles["image"]}>
@@ -150,7 +148,7 @@ const Home = () => {
         <p>platformanı daha faydalı etmək üçün sənin fikirlərin bizim üçün önəmlidir!</p>
       <div className={styles["send"]}>
     <input type="email" placeholder=''/>
-    <button>Gonder</button>
+    <button>Göndər</button>
 
       </div>
 

@@ -40,23 +40,27 @@ const postUser = async(req, res)=>{
 }
 
 const getUsersByUniversity = async (req, res) => {
-  try {
-    const userEmail = req.user.email;
-    const currentUser = await modelUser.findOne({ email: userEmail });
-    if (!currentUser) {
-      return res.status(404).json({ message: "İstifadəçi tapılmadı!" });
+    try {
+
+      const userEmail = req.user.email;
+  
+      const currentUser = await modelUser.findOne({ email: userEmail });
+  
+      if (!currentUser) {
+        return res.status(404).json({ message: "İstifadəçi tapılmadı!" });
+      }
+  
+      const users = await modelUser.find({ 
+        university: currentUser.university,
+        email: { $ne: userEmail } 
+      });
+  
+
+      res.status(200).json(users);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
     }
-
-    const users = await modelUser.find({ 
-      university: currentUser.university, 
-      email: { $ne: userEmail } // Özünüzü siyahıdan çıxarın
-    });
-
-    res.status(200).json(users);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+  };
 
 const searchUsersByUniversity = async (req, res) => {
     const { university } = req.query;

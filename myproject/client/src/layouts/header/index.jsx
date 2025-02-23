@@ -1,26 +1,25 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react'; 
 import styles from "./index.module.scss";
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/authContext';
 import { IoMdChatboxes } from "react-icons/io";
+import { FaMoon, FaSun } from "react-icons/fa"; // Dark və Light mode iconları
 
-
-const Header = () => {
+const Header = ({ darkMode, toggleDarkMode }) => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [isUnderlayOpen, setIsUnderlayOpen] = useState(false);
-  const underlayRef = useRef(null);
+  const underlayRef = useRef(null); 
 
   const handleLogout = () => {
     logout();
     navigate('/login');
   };
 
-  // Klikləri dinləmək üçün useEffect
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (underlayRef.current && !underlayRef.current.contains(event.target)) {
-        setIsUnderlayOpen(false); // Klik underlay xaricindədirsə, bağla
+        setIsUnderlayOpen(false); 
       }
     };
 
@@ -31,7 +30,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header>
+    <header className={darkMode ? styles["dark-mode"] : ""}>
       <nav>
         <div className="container">
           <div className={styles["box"]}>
@@ -45,12 +44,10 @@ const Header = () => {
             </ul>
             {user ? (
               <div className={styles["rightside"]}>
-                {/* <IoMdChatboxes onClick={() => navigate('/chat')} style={{ cursor: 'pointer' }} /> */}
-
                 <div
                   className={styles["user"]}
                   onClick={() => setIsUnderlayOpen(!isUnderlayOpen)}
-                  ref={underlayRef}
+                  ref={underlayRef} 
                 >
                   <div className={styles["logo"]}>
                     <img src={user.avatar} alt='' width={100} />
@@ -76,6 +73,9 @@ const Header = () => {
                 <NavLink to="/register"><button className={styles["register"]}>Qeydiyyatdan keç</button></NavLink>
               </div>
             )}
+            <button onClick={toggleDarkMode} className={styles["dark-mode-toggle"]}>
+              {darkMode ? <FaSun /> : <FaMoon />}
+            </button>
           </div>
         </div>
       </nav>

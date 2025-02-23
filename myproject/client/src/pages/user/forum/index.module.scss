@@ -1,0 +1,109 @@
+
+.forumContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 150px 0;
+  
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .questionForm {
+      margin-bottom: 20px;
+  
+      textarea {
+        width: 100%;
+        height: 100px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+  
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  
+    .questionsList {
+      .questionItem {
+        background-color: #f9f9f9;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+  
+        .questionHeader {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+  
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+          }
+        }
+  
+        .answersList {
+          margin-top: 15px;
+  
+          .answerItem {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+  
+            .answerHeader {
+              display: flex;
+              align-items: center;
+              margin-bottom: 5px;
+  
+              img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+  
+        .answerForm {
+          margin-top: 15px;
+  
+          textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          }
+  
+          button {
+            padding: 8px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+  
+            &:hover {
+              background-color: #218838;
+            }
+          }
+        }
+      }
+    }
+  }

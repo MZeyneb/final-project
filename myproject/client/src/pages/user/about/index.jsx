@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styles from './index.module.scss';
 import image from "../../../assets/girl.png"
-const About = () => {
+
+const About = ({ darkMode }) => {
   const [visibleSections, setVisibleSections] = useState({
     who: false,
     techs: false,
@@ -19,7 +20,7 @@ const About = () => {
 
   return (
     <>
-      <section className={styles["about"]}>
+      <section className={`${styles["about"]} ${darkMode ? styles["dark-mode"] : ""}`}>
         <div className="container">
             <h2>Platformamız Haqqında</h2>
           <div className={styles["box"]}>
@@ -40,25 +41,25 @@ const About = () => {
               Mən Kiməm?
             </li>
             <p className={`${styles["me"]} ${visibleSections.who ? styles["visible"] : ''}`}>
-              Mən [Adınız], [Universitetiniz] tələbəsiyəm və bu layihəni tələbələrin gündəlik həyatını asanlaşdırmaq üçün hazırladım. Təhsil və texnologiyaya olan marağım məni bu layihəyə yönəltdi. Bu platforma vasitəsilə tələbələrin daha effektiv və məmnuniyyətli bir təhsil həyatı yaşamasını istəyirəm.
+              Mən Mustafazadə Zeynəb, Azərbaycan Memarlıq və İnşaat Universitetinin tələbəsiyəm və bu layihəni tələbələrin gündəlik həyatını asanlaşdırmaq üçün hazırladım. Təhsil və texnologiyaya olan marağım məni bu layihəyə yönəltdi. Bu platforma vasitəsilə tələbələrin daha effektiv və məmnuniyyətli bir təhsil həyatı yaşamasını istəyirəm.
             </p>
             <li className={styles["techs"]} onClick={() => toggleSection('techs')}>
               Texnologiyalar
             </li>
             <p className={`${styles["used"]} ${visibleSections.techs ? styles["visible"] : ''}`}>
-              Bu layihə React, Node.js, Express.js və MongoDB texnologiyaları əsasında qurulub. Real-time mesajlaşma üçün Socket.io istifadə edilir.
+              Bu layihə React, Node.js, Express.js və MongoDB texnologiyaları əsasında qurulub.
             </p>
             <li className={styles["contact"]} onClick={() => toggleSection('contact')}>
-              Elaqe
+              Əlaqə
             </li>
             <p className={`${styles["send"]} ${visibleSections.contact ? styles["visible"] : ''}`}>
-              Əgər layihə ilə bağlı təklif və ya şikayətləriniz varsa, [email ünvanı] ünvanına yaza bilərsiniz.
+              Əgər layihə ilə bağlı təklif və ya şikayətləriniz varsa, zeynebmustafa05@gmail.com ünvanına yaza bilərsiniz.
             </p>
             <li className={styles["social"]} onClick={() => toggleSection('social')}>
               Sosial Media
             </li>
             <p className={`${styles["follow"]} ${visibleSections.social ? styles["visible"] : ''}`}>
-              Məni [LinkedIn](link), [GitHub](link) və ya [Instagram](link) üzərindən izləyə bilərsiniz.
+              Məni <a href="https://www.linkedin.com/in/zeyn%C9%99b-mustafazad%C9%99-54b857268/">Linkedin</a> üzərindən izləyə bilərsiniz.
             </p>
             <li className={styles["support"]} onClick={() => toggleSection('support')}>
               Təşəkkür

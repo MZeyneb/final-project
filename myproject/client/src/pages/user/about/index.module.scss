@@ -10,7 +10,6 @@
   
     .box {
       display: flex;
-    //   flex-direction: column;
       justify-content: center;
       align-items: center;
 
@@ -24,7 +23,6 @@
             height: 250px;
             display: flex;
             justify-content: center;
-            // align-items: center;
             img{
                 width: 100%;
                 width: 600px;
@@ -71,13 +69,42 @@
         max-height: 0;
         overflow: hidden;
         margin: 0;
-        // padding: 0 20px;
         transition: max-height 0.5s;
   
         &.visible {
           max-height: 450px;
           margin-bottom: 10px;
         }
+      }
+    }
+  }
+
+  .dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  
+    h2 {
+      color: #ffffff;
+    }
+  
+    .box {
+      .block {
+        background-color: #333333;
+        border-color: #ffc36b;
+  
+        h5 {
+          color: #ffc36b;
+        }
+      }
+    }
+  
+    ul {
+      li {
+        color: #ffffff;
+      }
+  
+      p {
+        color: #ffffff;
       }
     }
   }

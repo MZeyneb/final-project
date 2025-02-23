@@ -7,7 +7,6 @@ const Calendar = () => {
   const [newEvent, setNewEvent] = useState({ title: "", date: "" });
   const [showModal, setShowModal] = useState(false);
 
-  // Tarixləri formatlaşdırmaq üçün funksiya
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("en-GB", {
@@ -17,14 +16,13 @@ const Calendar = () => {
     });
   };
 
-  // Yeni event əlavə etmək
   const handleAddEvent = () => {
     if (newEvent.title && newEvent.date) {
       const event = {
         id: Date.now(),
         title: newEvent.title,
         date: formatDate(newEvent.date),
-        color: "#a3d8f4", // Light blue pastel rəng
+        color: "#a3d8f4", 
       };
       setEvents([...events, event]);
       setNewEvent({ title: "", date: "" });
@@ -32,12 +30,10 @@ const Calendar = () => {
     }
   };
 
-  // Event silmək
   const handleDeleteEvent = (id) => {
     setEvents(events.filter((event) => event.id !== id));
   };
 
-  // Ayı dəyişmək üçün funksiyalar
   const handlePrevMonth = () => {
     setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1));
   };
@@ -46,17 +42,15 @@ const Calendar = () => {
     setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1));
   };
 
-  // Cari ayın günlərini hesablamaq
+
   const getDaysInMonth = (year, month) => {
     return new Date(year, month + 1, 0).getDate();
   };
 
-  // Cari ayın adını almaq
   const getMonthName = (date) => {
     return date.toLocaleString("default", { month: "long" });
   };
 
-  // Təqvim günlərini yaratmaq
   const daysInMonth = getDaysInMonth(currentDate.getFullYear(), currentDate.getMonth());
   const calendarDays = Array.from({ length: daysInMonth }, (_, i) => i + 1);
 
@@ -66,7 +60,7 @@ const Calendar = () => {
 <div className={styles.calendarContainer}>
       <h1 className={styles.title}>My Calendar</h1>
 
-      {/* Ay və İl Başlığı */}
+
       <div className={styles.monthHeader}>
         <button onClick={handlePrevMonth} className={styles.navButton}>
           &lt;
@@ -79,7 +73,6 @@ const Calendar = () => {
         </button>
       </div>
 
-      {/* Təqvim Görünüşü */}
       <div className={styles.calendarGrid}>
         {calendarDays.map((day) => {
           const date = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
@@ -109,7 +102,6 @@ const Calendar = () => {
         })}
       </div>
 
-      {/* Yeni Event Əlavə Etmək Üçün Modal */}
       <button onClick={() => setShowModal(true)} className={styles.addEventButton}>
         + Add Event
       </button>

@@ -49,7 +49,7 @@ const register = async(req, res)=>{
         await newUser.save()
 
         const token = jwt.sign(
-            { email: newUser.email, role: newUser.role },
+            { email: newUser.email, role: newUser.role, university: user.university},
             process.env.JWT_SECRET,
             { expiresIn: "1h" }
           );
@@ -97,7 +97,7 @@ const login = async (req, res) => {
     }
 
     const token = jwt.sign(
-      { email: user.email, role: user.role },
+      { email: user.email, role: user.role, university: user.university },
       process.env.JWT_SECRET,
       { expiresIn: "1h" }
     );
@@ -149,6 +149,8 @@ const googleLogin = async (req, res) => {
     res.status(500).json({ message: "Server xətası", error: error.message });
   }
 };
+
+
 
 
 module.exports = {register, login, googleLogin}

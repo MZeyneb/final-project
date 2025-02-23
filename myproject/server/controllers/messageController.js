@@ -22,11 +22,9 @@ const sendMessage = async (req, res) => {
             message,
         });
 
-        await newMessage.save(); // **Mesajı bazaya əlavə etməyi unutmayın!**
-
+        await newMessage.save(); 
         conversation.messages.push(newMessage._id);
-        await conversation.save(); // **Söhbət obyektini də yeniləyirik**
-
+        await conversation.save(); 
         res.status(201).send(newMessage);
     } catch (error) {
         console.log("Error in sendMessage controller: ", error.message);

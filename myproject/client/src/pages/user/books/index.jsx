@@ -2,18 +2,21 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./index.module.scss";
 
-const Books = () => {
+const Books = ({ darkMode }) => {
   const [query, setQuery] = useState("");
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
-  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedBook, setSelectedBook] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleSearch = async () => {
+  const handleSearch = async (page = 1) => {
     if (!query) return;
 
+    setSearchQuery(query); 
+    setSelectedCategory("");
     setLoading(true);
     try {
       const response = await axios.get(
@@ -34,7 +37,6 @@ const Books = () => {
         `https://www.googleapis.com/books/v1/volumes?q=subject:fiction&key=AIzaSyAztV8IainJOGwMX-nwwtlypzLZPDYrZss&startIndex=${(page - 1) * 24}&maxResults=24`
       );
       setBooks(response.data.items);
-      
     } catch (error) {
       console.error("Xəta baş verdi:", error);
     } finally {
@@ -42,7 +44,9 @@ const Books = () => {
     }
   };
 
-  const handleCategoryChange = async (category) => {
+  const handleCategoryChange = async (category, page = 1) => {
+    setSelectedCategory(category); // Kateqoriyanı saxla
+    setSearchQuery(""); // Axtarış sorğusunu təmizlə
     setLoading(true);
     try {
       const response = await axios.get(
@@ -57,12 +61,17 @@ const Books = () => {
   };
 
   useEffect(() => {
-    getRandomBooks();
+    if (selectedCategory) {
+      handleCategoryChange(selectedCategory, page);
+    } else if (searchQuery) {
+      handleSearch(page);
+    } else {
+      getRandomBooks();
+    }
   }, [page]);
 
   const Modal = ({ book, onClose }) => {
     if (!book) return null;
-    console.log(book.volumeInfo);
     return (
       <div className={styles.modalOverlay}>
         <div className={styles.modal}>
@@ -121,7 +130,7 @@ const Books = () => {
   };
 
   return (
-    <div className={styles["books"]}>
+    <div className={`${styles["books"]} ${darkMode ? styles["dark-mode"] : ""}`}>
       <div className="container">
         <h1>Kitablar</h1>
         <input
@@ -131,17 +140,30 @@ const Books = () => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button className={styles["search-button"]} onClick={handleSearch}>
+        <button className={styles["search-button"]} onClick={() => handleSearch(1)}>
           Axtar
         </button>
 
         <div>
-          <select onChange={(e) => handleCategoryChange(e.target.value)}>
+          <select onChange={(e) => handleCategoryChange(e.target.value, 1)}>
             <option value="">Kateqoriya seçin</option>
-            <option value="fiction">Fiction</option>
-            <option value="non-fiction">Non-fiction</option>
-            <option value="mystery">Mystery</option>
-            <option value="romance">Romance</option>
+            <option value="fiction">Bədii</option>
+            <option value="education">Təhsil</option>
+            <option value="children">Uşaqlar</option>
+            <option value="sports">İdman</option>
+            <option value="cooking">Yemək</option>
+            <option value="science">Elmi</option>
+            <option value="fantastic">Fantastik</option>
+            <option value="philosophy">Fəlsəfə</option>
+            <option value="art">İncəsənət</option>
+            <option value="thriller">Həyəcan</option>
+            <option value="science+fiction">Elmi - bədii</option>
+            <option value="psychology">Psixologiya</option>
+            <option value="history">Tarix</option>
+            <option value="computer">Kompüter</option>
+            <option value="comics">Əyləncə</option>
+            <option value="mystery">Detektiv</option>
+            <option value="romance">Romantik</option>
           </select>
         </div>
 

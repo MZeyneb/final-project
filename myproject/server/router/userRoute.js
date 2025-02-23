@@ -13,6 +13,7 @@ router.get("/:id", getUserById)
 router.delete("/:id", deleteUser)
 router.post("/", postUser)
 router.get("/university", authMiddleware(["user", "admin"]), getUsersByUniversity);
+
 // router.get("/search", authMiddleware(["user", "admin"]), searchUsersByUniversity);
 // router.get("/users/search", async (req, res) => {
 //     try {

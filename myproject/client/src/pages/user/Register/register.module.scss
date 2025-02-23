@@ -73,6 +73,30 @@
             font-weight: 400;
           }
         }
+        select {
+          border: none;
+          padding: 7px 15px;
+          border-radius: 15px;
+          outline: none;
+          font-size: 17px;
+          background-color: #92b9ca;
+          color: white;
+          font-weight: 500;
+          width: 100%;
+          appearance: none; 
+          cursor: pointer;
+
+          &::placeholder {
+            color: white;
+            font-weight: 400;
+          }
+
+          option {
+            background-color: #92b9ca;
+            color: white;
+            padding: 10px;
+          }
+        }
         button {
           border: none;
           padding: 7px;
@@ -97,18 +121,18 @@
           }
         }
         .form-group {
-          position: relative; // Suggestions üçün position relative
+          position: relative; 
           .suggestions {
             position: absolute;
-            top: 100%; // Inputun altında görünəcək
+            top: 100%;
             left: 0;
             right: 0;
             background-color: white;
             border: 1px solid #ccc;
             border-radius: 5px;
-            max-height: 150px; // Maksimum hündürlük
-            overflow-y: auto; // Scroll əlavə edir
-            z-index: 10; // Digər elementlərin üstündə görünəcək
+            max-height: 150px;
+            overflow-y: auto; 
+            z-index: 10;
             list-style: none;
             padding: 0;
             margin: 0;

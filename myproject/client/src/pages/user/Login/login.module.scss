@@ -191,7 +191,7 @@
     .gsiMaterialButtonContentWrapper {
       display: flex;
       align-items: center;
-      justify-content: center; // Yazı və logo ortada
+      justify-content: center; 
       flex-direction: row;
       flex-wrap: nowrap;
       height: 100%;
@@ -201,13 +201,13 @@
   
     .gsiMaterialButtonIcon {
       height: 20px;
-      margin-right: 8px; // Logonun yazıdan məsafəsi
+      margin-right: 8px; 
       min-width: 20px;
       width: 20px;
     }
   
     .gsiMaterialButtonContents {
-      flex: none; // Yazının genişlənməsinin qarşısını al
+      flex: none; 
       font-family: "Roboto", Arial, sans-serif;
       font-weight: 500;
       overflow: hidden;

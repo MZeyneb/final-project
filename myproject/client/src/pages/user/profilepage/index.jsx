@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../../context/authContext';
 import { useNavigate } from 'react-router-dom';
 import styles from './index.module.scss';
-import { FaPencilAlt } from 'react-icons/fa'; // Qələm ikonu üçün
+import { FaPencilAlt } from 'react-icons/fa'; 
 
 const ProfilePage = () => {
   const { user } = useAuth();

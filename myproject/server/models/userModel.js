@@ -47,6 +47,8 @@ const userSchema = new mongoose.Schema(
       default: "user",
       enum: ["user", "admin"],
     },
+   readBooks: [{ type: String }], 
+   wishlistBooks: [{ type: String }],
   },
   { timestamps: true }
 );

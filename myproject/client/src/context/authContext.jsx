@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
     if (storedUser) {
       setUser(storedUser);
-      console.log("LocalStorage-dan istifadəçi məlumatları:", storedUser); // Məlumatları yoxlayın
+      console.log("LocalStorage-dan istifadəçi məlumatları:", storedUser); 
     }
   }, []);
 
@@ -37,13 +37,13 @@ export const AuthProvider = ({ children }) => {
         formData.append('avatar', file);
       }
 
-      const response = await axios.put('/api/user/avatar', formData, {
+      const response = await axios.put('/user/avatar', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
 
-      setUser(response.data.user); // Yenilənmiş istifadəçi məlumatlarını saxla
+      setUser(response.data.user); 
     } catch (error) {
       console.error('Avatar yenilənərkən xəta:', error);
       throw error;
